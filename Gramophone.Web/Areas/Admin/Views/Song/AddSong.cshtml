@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Gramophone.Web.Models.SongDTO
+
+<h2>Add</h2>
+ 
+<form action="/Song/AddSong" class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
+    <div class="header">
+        <h2>Add Song</h2>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="SongTitle" name="SongTitle" placeholder="Title">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Year</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="Year" name="Year" placeholder="Year">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 1</label>
+        @Html.DropDownList("Singer1", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 2</label>
+        @Html.DropDownList("Singer2", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 3</label>
+        @Html.DropDownList("Singer3", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Composer</label>
+        @Html.DropDownList("Composer", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Director</label>
+        @Html.DropDownList("Director", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Music By</label>
+        @Html.DropDownList("Musician", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Album</label>
+        @*@Html.DropDownList("Album", new SelectList(ViewBag.Albums, "Value", "Text"), new {@class="btn dropdown-toggle"})*@ 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">YouTube Link</label>
+                <div class="col-sm-3">
+            <input type="text" class="form-control" id="YouTubeURL" name="YouTubeURL" placeholder="Title">
+        </div> 
+    </div>
+<p><button type="submit" id="btnSubmit"  class="btn btn-default">Add</button></p>
+</form> 
+ 
+ 
+
